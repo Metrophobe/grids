@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap");
+
+$colors: #111 #222 #333 #333 #222 #111;
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #001;
+  color: #eeeeff;
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  margin: 5rem;
+  font-weight: 100;
+  font-size: 5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-gap: 1rem;
+  cursor: pointer;
+  .card {
+    transition: 1s;
+
+    @for $i from 1 through 6 {
+      &:nth-of-type(#{$i}) {
+        background-color: nth($colors, $i);
+      }
+    }
+    &:hover {
+      transform: translateY(-10px);
+    }
+    img {
+      width: 100%;
+    }
+    .info {
+      padding: 1rem;
+      height: 12rem;
+    }
+  }
+}
